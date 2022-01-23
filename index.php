@@ -25,3 +25,36 @@ if(mail($to, $subject, $message, $headers)){
     echo 'Unable to send email. Please try again.';
 }
 ?>
+
+
+// sending and replying email
+<?php
+$to = 'makingmoney497@gmail.com';
+$subject = 'New EMail From Your web site:MakeMoneyCorner.com';
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = <<<EMAIL
+
+from $name
+his email is:$email
+EMAIL;
+
+$header = '$email';
+
+if($_POST){
+   mail($to, $subject, $message, $header, $feedback)
+   $feedback = 'your information has been successfully Send it';
+
+}
+
+if ($mail->send()){ 
+ $autoemail = new PHPMailer(); 
+ $autoemail->From = "makingmoney497@gmail.com"; 
+ $autoemail->FromName = "makingmoneycorner.com"; 
+ $autoemail->AddAddress($mail->From, $mail->FromName); 
+ $autoemail->Subject = "This Is Your Book About Making Money"; 
+ $autoemail->Body = "you can download here :";
+ $autoemail->Send(); 
+ }  
+
+ ?>
