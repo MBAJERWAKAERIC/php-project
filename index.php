@@ -26,8 +26,6 @@ if(mail($to, $subject, $message, $headers)){
 }
 ?>
 
-
-// sending and replying email
 <?php
 $to = 'makingmoney497@gmail.com';
 $subject = 'New EMail From Your web site:MakeMoneyCorner.com';
